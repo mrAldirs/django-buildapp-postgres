@@ -29,6 +29,9 @@ dist/
 # Ignore any database files
 *.db
 
+# Ignore any SQLite database files
+db.sqlite3
+
 # Ignore any generated HTML files
 .migrations/
 
