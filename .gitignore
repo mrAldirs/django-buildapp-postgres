@@ -29,9 +29,6 @@ dist/
 # Ignore any database files
 *.db
 
-# Ignore any generated documentation
-docs/_build/
-
 # Ignore any generated HTML files
 .migrations/
 
