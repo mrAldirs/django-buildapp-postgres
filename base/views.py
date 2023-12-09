@@ -1,21 +1,14 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-rooms = [
-    {'id': '1', 'name': 'Leonardo'},
-    {'id': '2', 'name': 'Gerrard'},
-    {'id': '3', 'name': 'Martin'},
-]
-
+from base.models import Room
 
 def home(request):
-    context = {'rooms': rooms}
+    queryset = Room.objects.all()
+    context = {'rooms': queryset}
     return render(request, 'base/home.html', context)
 
 def room(request, pk):
-    room = None
-    for i in rooms:
-        if i['id'] == pk:
-            room = i
+    room = Room.objects.get(id=pk)
     context = {'room': room}
     return render(request, 'base/room.html', context)
