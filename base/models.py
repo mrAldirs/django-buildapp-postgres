@@ -19,11 +19,14 @@ class Room(models.Model):
   updated = models.DateTimeField(auto_now=True)
   created = models.DateTimeField(auto_now_add=True)
 
+  class Meta:
+    ordering = ['-updated', '-created']
+
   # def __str__ is used to display the name of the room in the admin panel
   def __str__(self):
     return self.name
 
-class message(models.Model):
+class Message(models.Model):
   user = models.ForeignKey(User, on_delete=models.CASCADE)
   room = models.ForeignKey(Room, on_delete=models.CASCADE) # if room is deleted, delete all messages in that room
   body = models.TextField()
