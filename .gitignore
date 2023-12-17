@@ -35,4 +35,6 @@ dist/
 # Ignore any IDE-specific files and directories
 .idea/
 .vscode/
-.templates/
+
+# Remove templates
+templates/
